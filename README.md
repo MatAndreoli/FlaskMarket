@@ -6,6 +6,10 @@ that is needed on your machine, run on your terminal:
 ```shell
 python3 -m venv venv
 ```
+Then to activate your Virtual Environment, run:
+```shell
+source <path/to/venv>/bin/activate
+```
 Then to install all that is needed, run:
 ```shell
 pip install -r requirements.txt
