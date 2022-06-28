@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, Request
 
 from .constants import SECRET_KEY, PORT, HOST
+from .models.Items import Items
+from .models.Users import Users
 from .used_all_over import init_login_manager, update_db, db
 
 app = Flask(__name__)
