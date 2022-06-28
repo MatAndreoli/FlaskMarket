@@ -1,0 +1,29 @@
+
+<div class="modal fade" id="Modal-SoldItem-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #212121;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Modal-SoldItem-Label">{{ item.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center ">
+                <h4>Are you sure you want to sell {{ item.name }}?</h4>
+                You have:
+                {% include 'utils/icon_user_budget.html' %}<br>
+                This item costs:
+                {% include 'utils/icon_item_price_lawngreen.html' %}<br>
+                You'd have:
+                {% include 'utils/icon_gain_budget.html' %}
+                <form action="" method="post">
+                    {{ sellItemForm.hidden_tag() }}
+                    <input type="hidden" name="sold_item" id="sold_item" value="{{ item.id }}">
+                    {{ sellItemForm.submit(class='mt-3 btn btn-outline-danger') }}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Login</h1>
+    <br>
+    <form method="POST" action="/login" class="form-login">
+        {{ form.hidden_tag() }}
+        <div class="form-floating mb-3" style="color: black">
+            {{ form.username(class='form-control', id="floatingInput", placeholder="username", type="text") }}
+            {{ form.username.label(for="floatingInput") }}
+        </div>
+        <div class="form-floating mb-3" style="color: black">
+            {{ form.password(class='form-control', id="floatingInput", placeholder="123456", type="password") }}
+            {{ form.password.label(for="floatingInput") }}
+        </div>
+        <div class="text-center">
+            {{ form.submit(class='form-control btn btn-success') }}
+        </div>
+        <div class="checkbox mb-3 mt-5">
+            <h6>Do not have an account?</h6>
+            <a class="btn btn-sm btn-secondary mt-1" href="{{ url_for('register_page') }}">Create an account</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

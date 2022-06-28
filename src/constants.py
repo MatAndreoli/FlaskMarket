@@ -1,0 +1,9 @@
+GET = 'GET'
+POST = 'POST'
+SUCCESS = 'success'
+INFO = 'info'
+ERROR = 'danger'
+WARNING = 'warning'
+PORT = 3000
+HOST = 'localhost'
+SECRET_KEY = '121daba794a0616a5d6335ee'

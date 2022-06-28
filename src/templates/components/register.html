@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Register Page
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Create your account!!!</h1>
+    <br>
+    <form method="POST" class="form-register">
+        {{ form.hidden_tag() }}
+        <div class="form-floating mb-3" style="color: black">
+            {{ form.username(class='form-control', id="floatingInput", placeholder="username", type="text") }}
+            {{ form.username.label(for="floatingInput") }}
+        </div>
+        <div class="form-floating mb-3" style="color: black">
+            {{ form.email_address(class='form-control', id="floatingInput", placeholder="name@example.com",
+            type="email") }}
+            {{ form.email_address.label(for="floatingInput") }}
+        </div>
+        <div class="form-floating mb-3" style="color: black">
+            {{ form.password(class='form-control', id="floatingInput", placeholder="123456", type="password") }}
+            {{ form.password.label(for="floatingInput") }}
+        </div>
+        <div class="form-floating mb-3" style="color: black">
+            {{ form.password2(class='form-control', id="floatingInput", placeholder="123456", type="password") }}
+            {{ form.password2.label(for="floatingInput") }}
+        </div>
+
+        <div class="text-center">
+            {{ form.submit(class='form-control btn btn-success') }}
+        </div>
+
+        <div class="checkbox mb-3 mt-5">
+            <h6>Already have an account?</h6>
+            <a class="btn btn-sm btn-secondary mt-1" href="{{ url_for('login_page') }}">Sign in</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
